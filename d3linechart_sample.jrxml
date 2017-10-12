@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TOI_Circle_test" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SeriesDataAdapter.xml"/>
+	<subDataset name="SeriesDataset" whenResourceMissingType="Empty" uuid="b552340c-81fc-47ec-aaed-9dd3324bba58">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SeriesDataAdapter.xml"/>
+		<property name="net.sf.jasperreports.data.adapter" value="SeriesDataAdapter.xml"/>
+	</subDataset>
+	<queryString language="WebServiceQuery">
+		<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "timestamp",
+    "expression" : "timestamp"
+  }, {
+    "name" : "value",
+    "expression" : "value"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "data",
+    "baseUrl" : ""
+  },
+  "headersMap" : { },
+  "queryData" : "",
+  "GETParameters" : { }
+}]]>
+	</queryString>
+	<field name="timestamp" class="java.lang.Long"/>
+	<field name="value" class="java.lang.Float"/>
+	<title>
+		<band height="376" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="0" width="555" height="376" uuid="fbb36477-0a3a-4763-98ce-94237b08671e"/>
+				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Report">
+					<cvc:itemProperty name="script" value="d3linechart.min.js"/>
+					<cvc:itemProperty name="module" value="d3linechart"/>
+					<cvc:itemProperty name="css" value="d3linechart.css"/>
+					<cvc:cvData>
+						<dataset/>
+						<cvc:item>
+							<cvc:itemProperty name="timestamp">
+								<valueExpression><![CDATA[new java.util.Date($F{timestamp})]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="value">
+								<valueExpression><![CDATA[$F{value}]]></valueExpression>
+							</cvc:itemProperty>
+						</cvc:item>
+					</cvc:cvData>
+				</cvc:customvisualization>
+			</componentElement>
+		</band>
+	</title>
+</jasperReport>

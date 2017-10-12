@@ -1,0 +1,38 @@
+{
+  "label" : "LineChart",
+  "description" : "A Line Chart based on D3",
+  "module" : "d3linechart",
+  "thumbnail" : "d3linechart.png",
+  "sections" : [ {
+    "name" : "Script",
+    "expandable" : false,
+    "properties" : [ {
+      "name" : "module",
+      "label" : "Module",
+      "description" : "Module name",
+      "mandatory" : true,
+      "defaultValue" : "d3linechart",
+      "readOnly" : true,
+      "type" : "TEXT",
+      "transparent" : false
+    }, {
+      "name" : "css",
+      "label" : "CSS Path",
+      "description" : "CSS Path",
+      "mandatory" : true,
+      "defaultValue" : "d3linechart.css",
+      "readOnly" : false,
+      "type" : "PATH",
+      "transparent" : false
+    }, {
+      "name" : "script",
+      "label" : "Script Path",
+      "description" : "Script path",
+      "mandatory" : true,
+      "defaultValue" : "d3.min.js",
+      "readOnly" : false,
+      "type" : "PATH",
+      "transparent" : false
+    } ]
+  } ]
+}
